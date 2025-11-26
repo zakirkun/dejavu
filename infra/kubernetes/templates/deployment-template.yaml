@@ -1,0 +1,51 @@
+# Template untuk user deployment
+# Variables: {{NAME}}, {{IMAGE}}, {{REPLICAS}}
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{NAME}}
+  namespace: dejavu-apps
+  labels:
+    app: {{NAME}}
+    managed-by: dejavu
+spec:
+  replicas: {{REPLICAS}}
+  selector:
+    matchLabels:
+      app: {{NAME}}
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxSurge: 1
+      maxUnavailable: 0
+  template:
+    metadata:
+      labels:
+        app: {{NAME}}
+    spec:
+      containers:
+        - name: app
+          image: {{IMAGE}}
+          ports:
+            - containerPort: 80
+              protocol: TCP
+          resources:
+            requests:
+              cpu: 100m
+              memory: 128Mi
+            limits:
+              cpu: 500m
+              memory: 512Mi
+          livenessProbe:
+            httpGet:
+              path: /
+              port: 80
+            initialDelaySeconds: 30
+            periodSeconds: 10
+          readinessProbe:
+            httpGet:
+              path: /
+              port: 80
+            initialDelaySeconds: 5
+            periodSeconds: 5
+

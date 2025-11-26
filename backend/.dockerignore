@@ -1,0 +1,10 @@
+.env
+.env.*
+*.log
+bin/
+vendor/
+.git
+.gitignore
+README.md
+Makefile
+
