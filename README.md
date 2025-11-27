@@ -76,7 +76,7 @@ User → Frontend → Backend API → NATS → Builder Worker → Docker Registr
 ### 1. Clone Repository
 
 ```bash
-git clone https://github.com/yourusername/dejavu.git
+git clone https://github.com/zakirkun/dejavu.git
 cd dejavu
 ```
 

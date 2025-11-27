@@ -16,7 +16,7 @@ Panduan lengkap untuk deploy Dejavu platform dari awal.
 ### 1. Clone Repository
 
 ```bash
-git clone <your-repo-url>
+git clone https://github.com/zakirkun/dejavu
 cd dejavu
 ```
 
@@ -484,7 +484,7 @@ trivy image registry.dejavu.id/dejavu/backend:latest
 ## Support
 
 Untuk pertanyaan atau issue:
-- GitHub Issues: <your-repo-url>/issues
+- GitHub Issues: https://github.com/zakirkun/dejavu/issues
 - Email: support@dejavu.id
 - Documentation: https://docs.dejavu.id
 
